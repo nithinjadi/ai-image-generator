@@ -1,0 +1,245 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.navbar {
+    width: 100%;
+    /* background-color: #121212; */
+    color: #fff;
+    padding: 15px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.navbar-options {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-options .signout-btn {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: #4949E7;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-options .signout-btn:hover {
+    background-color: #6c6cff;
+}
+
+
+
+
+
+.image-generator{
+    height:45vh;
+    background: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    position:relative;
+
+    justify-content: center;
+    align-items: center;
+    /* position:relative; */
+}
+
+.image-generator::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    opacity: 0.5;
+    background:#121212;
+}
+.image-generator .content{
+    color:#fff;
+    padding: 0,15px;
+    max-width: 760px;
+    text-align: center;
+    position: relative;
+}
+
+.image-generator h1{
+    font-size: 50px;
+    margin-top:10px;
+}
+
+.image-generator .generate-form{
+    height:56px;
+    width:100%;
+    display:flex;
+    padding: 6px;
+    margin:45px 0 15px;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 30px;
+}
+
+.generate-form .prompt-input{
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    background: none;
+    padding: 0 17px;
+}
+
+.generate-form .controls{
+    display:flex;
+    height:100%;
+    gap:15px;
+}
+
+.generate-form .img-quantity{
+    outline:none;
+    border: none;
+    background:none;
+    font-size: 1rem;
+}
+
+.generate-form .generate-btn{
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 0 25px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: #4949E7;
+}
+
+
+
+.gallery{
+    width: 100vw;
+    background-color: rgba(197, 188, 188, 0.411);
+    background-size: cover;
+    background-position: center;
+    height: 55vh;
+    padding-top: 1px;
+}
+
+.image-gallery{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    max-width: 1250px;
+    margin: 50px auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-gallery .img-card{
+    width: 285px;
+    aspect-ratio: 1/1;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-gallery .img-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-gallery .img-card .download-btn img{
+    width: 14px;
+    height: 14px;
+}
+
+.image-gallery .img-card .download-btn{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #fff;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-gallery .img-card:hover .download-btn{
+    display:flex;
+}
+
+@media  screen and (max-width:760px) {
+    .image-generator h1{
+        font-size: 1.8rem;
+    }
+    .image-generatorn p{
+        font-size: 1rem;
+    }
+    .image-generator .generate-form{
+        margin-top: 30px;
+        height: 52px;
+        display: block;
+    }
+    .generate-form .controls{
+        height: 40px;
+        margin-top: 15px;
+        align-items: center;
+        justify-content: flex-end;  
+    }
+    .generate-form .img-quantity{
+        color: #fff;
+
+    }
+    .generate-form .img-quantity option{
+        color: #000;
+
+    }
+    .generate-form .generate-btn{
+        height: 100%;
+    }
+    .image-gallery{
+        margin-top: 20px;
+    }
+    .image-gallery .img-card:not(.loading) .download-btn{
+        display: flex;
+    }
+}
+
+@media screen and (max-width:550px){
+    .image-gallery .img-card{
+        width: 100%;
+    }
+    
+}
